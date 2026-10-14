@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     secret_key: str
     algorithm: str
     access_token_expires_minutes: int
+    groq_api_key: str
 
     class Config:
         env_file = ".env"

@@ -67,3 +67,29 @@ class PostOut(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+# ==========================================
+# 1. SCHEMAS FOR /chat ENDPOINT
+# ==========================================
+class ChatRequest(BaseModel):
+    prompt: str
+
+
+class ChatResponse(BaseModel):
+    reply: str
+
+
+# ==========================================
+# 2. SCHEMAS FOR /summarize ENDPOINT (Validated JSON)
+# ==========================================
+class SummarizeRequest(BaseModel):
+    text: str
+
+
+class SummaryResult(BaseModel):
+    title: str = Field(description="A short, catchy title summarizing the text.")
+    key_points: list[str] = Field(
+        description="A list of 3 major takeaways from the text."
+    )
+    sentiment: str = Field(description="Overall tone: positive, neutral, or negative.")

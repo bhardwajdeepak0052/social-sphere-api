@@ -10,9 +10,17 @@ from urllib.parse import quote_plus
 
 # Encode the password so special characters like '@' are safely handled in the URL
 password = quote_plus(settings.database_password)
+print("ho")
+print("ho")
+print("ho")
+print("ho")
+print("ho")
+print("ho")
+print(password)
+print(settings.database_password)
 
 SQL_DATABASE_URL = f"postgresql+psycopg2://{settings.database_username}:{password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}"
-
+print(SQL_DATABASE_URL)
 # SQL_DATABASE_URL = f"postgresql+psycopg2://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}"
 
 

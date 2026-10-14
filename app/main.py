@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routers import auth, vote
+from app.routers import auth, vote, ai
 from . import models
 from .database import engine
 from .routers import post, user
@@ -41,3 +41,4 @@ app.include_router(post.router)
 app.include_router(user.router)
 app.include_router(auth.router)
 app.include_router(vote.router)
+app.include_router(ai.router)
